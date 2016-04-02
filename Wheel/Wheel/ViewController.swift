@@ -8,7 +8,9 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITableViewDelegate, UITextFieldDelegate {
+    
+    @IBOutlet weak var tableView: UITableView!  //<<-- TableView Outlet
 
     override func viewDidLoad() {
         super.viewDidLoad()
