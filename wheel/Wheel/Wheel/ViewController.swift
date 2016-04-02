@@ -20,7 +20,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background")!)
         //textFieldOne.delegate = self
         //
         tableView.delegate = self
@@ -54,8 +54,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
         return true
     }*/
-    
-    
     
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
