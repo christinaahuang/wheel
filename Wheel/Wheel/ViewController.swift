@@ -16,6 +16,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet weak var button1: UIButton!
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var button2: UIButton!
+    @IBOutlet weak var button3: UIButton!
+    @IBOutlet weak var button4: UIButton!
     
     
     override func viewDidLoad() {
@@ -31,7 +34,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBAction func button1waspressed(sender: AnyObject) {
         print("Button1")
         textFieldTwo.hidden = false
+        
     }
+    @IBAction func button2waspressed(sender: AnyObject) {
+    }
+    @IBAction func button3waspressed(sender: AnyObject) {
+    }
+    @IBAction func button4waspressed(sender: AnyObject) {
+    }
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
