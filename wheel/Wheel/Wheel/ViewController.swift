@@ -15,18 +15,22 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     //@IBOutlet weak var textFieldTwo: UITextField!
     //@IBOutlet weak var button1: UIButton!
     
-    @IBOutlet weak var tableView: UITableView!
+    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background")!)
+        self.tableView.backgroundColor = .clearColor()
+        
         //textFieldOne.delegate = self
         //
         tableView.delegate = self
         tableView.dataSource = self
         // Do any additional setup after loading the view, typically from a nib.
     }
+    
+    @IBOutlet weak var tableView: UITableView!
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
         return UIStatusBarStyle.LightContent
@@ -61,7 +65,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 6
+        return 20
     }
     
     // Returning UITableViewCell to the TableView
