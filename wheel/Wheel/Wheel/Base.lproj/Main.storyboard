@@ -19,17 +19,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6Rb-pg-xCf">
-                                <rect key="frame" x="32" y="310" width="548" height="270"/>
+                                <rect key="frame" x="0.0" y="310" width="600" height="290"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="1000" selectionStyle="default" indentationWidth="10" reuseIdentifier="choreCell" id="ykK-Gu-Yji" customClass="ChoreCell" customModule="Wheel" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="548" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" alpha="0.0" contentMode="center" horizontalHuggingPriority="1000" selectionStyle="default" indentationWidth="10" reuseIdentifier="choreCell" id="ykK-Gu-Yji" customClass="ChoreCell" customModule="Wheel" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ykK-Gu-Yji" id="OYC-t2-6eP">
-                                            <rect key="frame" x="0.0" y="0.0" width="548" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RuO-Rk-elM">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RuO-Rk-elM">
                                                     <rect key="frame" x="226" y="4" width="97" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="97" id="b4A-n2-fuI"/>
@@ -67,4 +67,5 @@
             <point key="canvasLocation" x="245" y="314"/>
         </scene>
     </scenes>
+    <color key="tintColor" red="0.98364441138068381" green="1" blue="0.97138856719642241" alpha="1" colorSpace="calibratedRGB"/>
 </document>

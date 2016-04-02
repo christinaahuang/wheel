@@ -27,6 +27,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableView.dataSource = self
         // Do any additional setup after loading the view, typically from a nib.
     }
+    
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return UIStatusBarStyle.LightContent
+    }
 
     /*@IBAction func button1waspressed(sender: AnyObject) {
         print("Button1")
