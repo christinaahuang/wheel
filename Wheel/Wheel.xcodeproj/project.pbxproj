@@ -14,6 +14,7 @@
 		DBA465181CAFA3020058F9F5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBA465161CAFA3020058F9F5 /* LaunchScreen.storyboard */; };
 		DBA465231CAFA3020058F9F5 /* WheelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA465221CAFA3020058F9F5 /* WheelTests.swift */; };
 		DBA4652E1CAFA3020058F9F5 /* WheelUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA4652D1CAFA3020058F9F5 /* WheelUITests.swift */; };
+		DBA465401CB0531A0058F9F5 /* ChoreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA4653F1CB0531A0058F9F5 /* ChoreCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		DBA465291CAFA3020058F9F5 /* WheelUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WheelUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBA4652D1CAFA3020058F9F5 /* WheelUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WheelUITests.swift; sourceTree = "<group>"; };
 		DBA4652F1CAFA3020058F9F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DBA4653F1CB0531A0058F9F5 /* ChoreCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChoreCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 				DBA4650D1CAFA3010058F9F5 /* AppDelegate.swift */,
 				DBA4650F1CAFA3010058F9F5 /* ViewController.swift */,
 				DBA465111CAFA3020058F9F5 /* Main.storyboard */,
+				DBA4653F1CB0531A0058F9F5 /* ChoreCell.swift */,
 				DBA465141CAFA3020058F9F5 /* Assets.xcassets */,
 				DBA465161CAFA3020058F9F5 /* LaunchScreen.storyboard */,
 				DBA465191CAFA3020058F9F5 /* Info.plist */,
@@ -260,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DBA465101CAFA3020058F9F5 /* ViewController.swift in Sources */,
+				DBA465401CB0531A0058F9F5 /* ChoreCell.swift in Sources */,
 				DBA4650E1CAFA3010058F9F5 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

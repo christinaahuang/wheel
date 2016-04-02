@@ -8,20 +8,23 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITextFieldDelegate {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
 
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var textFieldOne: UITextField!
     @IBOutlet weak var textFieldTwo: UITextField!
     @IBOutlet weak var button1: UIButton!
     
+    @IBOutlet weak var tableView: UITableView!
     
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
         textFieldOne.delegate = self
+        //
+        tableView.delegate = self
+        tableView.dataSource = self
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -52,8 +55,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     
     
-    
-    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 4
     }
@@ -64,8 +65,5 @@ class ViewController: UIViewController, UITextFieldDelegate {
         let cell = tableView.dequeueReusableCellWithIdentifier("choreCell") as! ChoreCell
         return cell
     }
-    
-    
-
 }
 
