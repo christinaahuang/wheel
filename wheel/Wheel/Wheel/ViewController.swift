@@ -14,10 +14,17 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     //@IBOutlet weak var textFieldOne: UITextField!
     //@IBOutlet weak var textFieldTwo: UITextField!
     //@IBOutlet weak var button1: UIButton!
+    var Array:[String] = []
+/*    var weight:Int = 0
+
+    @IBOutlet weak var ourLabel: UILabel!
     
     
-    
-    
+    @IBAction func upButton(sender: AnyObject) {
+        weight = weight + 1
+        ourLabel.text = String(weight)
+    }
+*/
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background")!)
@@ -34,6 +41,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
         return UIStatusBarStyle.LightContent
+    }
+
+    @IBAction func didEndOnExit(sender: UITextField) {
+        Array.append(sender.text!)
+        print(Array[0])
     }
 
     /*@IBAction func button1waspressed(sender: AnyObject) {
