@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -31,11 +31,6 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nej-Eg-ID2">
-                                        <rect key="frame" x="156" y="151" width="298" height="30"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yDa-Rj-bE1">
                                         <rect key="frame" x="40" y="37" width="46" height="30"/>
                                         <state key="normal" title="Button"/>
@@ -43,17 +38,26 @@
                                             <action selector="button1waspressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="faw-u6-f4W"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yss-fZ-gt8">
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yss-fZ-gt8">
                                         <rect key="frame" x="40" y="75" width="46" height="30"/>
                                         <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="button2waspressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pOP-6Y-aPr"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y8e-VX-Don">
                                         <rect key="frame" x="40" y="113" width="46" height="30"/>
                                         <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="button3waspressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="G53-rT-Vnj"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DXf-zz-kj5">
                                         <rect key="frame" x="40" y="150" width="46" height="30"/>
                                         <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="button4waspressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="l52-RF-21L"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sfx-Aw-wrL">
                                         <rect key="frame" x="473" y="17" width="46" height="30"/>
@@ -74,6 +78,11 @@
                                         <constraints>
                                             <constraint firstAttribute="width" constant="298" id="veg-7L-vox"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nej-Eg-ID2">
+                                        <rect key="frame" x="156" y="151" width="298" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
@@ -119,6 +128,10 @@
                     </view>
                     <connections>
                         <outlet property="button1" destination="yDa-Rj-bE1" id="IEm-Fp-zUj"/>
+                        <outlet property="button2" destination="Yss-fZ-gt8" id="FN0-n5-boE"/>
+                        <outlet property="button3" destination="y8e-VX-Don" id="AY6-85-DTW"/>
+                        <outlet property="button3waspressed" destination="y8e-VX-Don" id="thg-rN-aFS"/>
+                        <outlet property="button4" destination="DXf-zz-kj5" id="JEd-O4-mPY"/>
                         <outlet property="scrollView" destination="Wv8-C5-BZR" id="Kq8-kd-RNI"/>
                         <outlet property="textFieldOne" destination="xQs-dd-mdg" id="z4j-e3-KiV"/>
                         <outlet property="textFieldTwo" destination="pWc-Sb-nb7" id="J3O-Qv-Ifr"/>
