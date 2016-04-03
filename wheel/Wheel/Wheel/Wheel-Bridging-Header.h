@@ -7,3 +7,7 @@
 #import "SMViewController.h"
 #import "SMSector.h"
 
+#import "ANSpinWheel.h"
+#import "ANViewController.h"
+#import "ANImageWheel.h"
+
