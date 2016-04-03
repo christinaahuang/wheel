@@ -33,7 +33,10 @@ class ChoreCell: UITableViewCell {
     
     @IBAction func didPressDownButton(sender: AnyObject) {
         if let labelValue = Int(weightLabel.text!) {
-            weightLabel.text = String(labelValue - 1)
+            if labelValue != 0
+            {
+                weightLabel.text = String(labelValue - 1)
+            }
         }
     }
     

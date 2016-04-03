@@ -46,8 +46,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }*/
     
     @IBAction func didEndOnExit(sender: UITextField) {
-        Array.append(sender.text!)
-        print(Array[0])
+        if sender.text!.characters.count > 0
+        {
+            Array.append(sender.text!)
+        }
+        print(Array)
     }
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 20
