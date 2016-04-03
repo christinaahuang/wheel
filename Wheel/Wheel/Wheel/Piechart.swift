@@ -23,7 +23,7 @@ public class Piechart: UIControl {
     }
     
     // Private
-    private var titleLabel: UILabel!
+//    private var titleLabel: UILabel!
     private var subtitleLabel: UILabel!
     private var infoLabel: UILabel!
     private var total: CGFloat!
@@ -36,11 +36,11 @@ public class Piechart: UIControl {
     public var activeSlice: Int = 0
     public var delegate: PiechartDelegate?
     
-    public var title: String = "title" {
-        didSet {
-            titleLabel.text = title
-        }
-    }
+//    public var title: String = "title" {
+//        didSet {
+//            titleLabel.text = title
+//        }
+//    }
     
     
     public var slices: [Slice] = [] {
@@ -67,12 +67,12 @@ public class Piechart: UIControl {
         
 //        self.addTarget(self, action: #selector(Piechart.click), forControlEvents: .TouchUpInside)
         
-        titleLabel = UILabel()
-        titleLabel.text = title
-        titleLabel.font = UIFont.preferredFontForTextStyle(UIFontTextStyleHeadline)
-        titleLabel.textAlignment = .Center
-        titleLabel.translatesAutoresizingMaskIntoConstraints = false
-        self.addSubview(titleLabel)
+//        titleLabel = UILabel()
+//        titleLabel.text = title
+//        titleLabel.font = UIFont.preferredFontForTextStyle(UIFontTextStyleHeadline)
+//        titleLabel.textAlignment = .Center
+//        titleLabel.translatesAutoresizingMaskIntoConstraints = false
+//        self.addSubview(titleLabel)
         
 //        subtitleLabel = UILabel()
 //        subtitleLabel.text = subtitle
@@ -90,8 +90,8 @@ public class Piechart: UIControl {
 //        infoLabel.translatesAutoresizingMaskIntoConstraints = false
 //        self.addSubview(infoLabel)
         
-        self.addConstraint(NSLayoutConstraint(item: titleLabel, attribute: .CenterX, relatedBy: .Equal, toItem: self, attribute: .CenterX, multiplier: 1, constant: 0))
-        self.addConstraint(NSLayoutConstraint(item: titleLabel, attribute: .Bottom, relatedBy: .Equal, toItem: self, attribute: .CenterY, multiplier: 1, constant: 0))
+//        self.addConstraint(NSLayoutConstraint(item: titleLabel, attribute: .CenterX, relatedBy: .Equal, toItem: self, attribute: .CenterX, multiplier: 1, constant: 0))
+//        self.addConstraint(NSLayoutConstraint(item: titleLabel, attribute: .Bottom, relatedBy: .Equal, toItem: self, attribute: .CenterY, multiplier: 1, constant: 0))
         
 //        self.addConstraint(NSLayoutConstraint(item: subtitleLabel, attribute: .CenterX, relatedBy: .Equal, toItem: self, attribute: .CenterX, multiplier: 1, constant: 0))
 //        self.addConstraint(NSLayoutConstraint(item: subtitleLabel, attribute: .Top, relatedBy: .Equal, toItem: self, attribute: .CenterY, multiplier: 1, constant: 0))
@@ -123,29 +123,29 @@ public class Piechart: UIControl {
             path.moveToPoint(center)
             path.addArcWithCenter(center, radius: radius.outer, startAngle: startAngle, endAngle: endAngle, clockwise: true)
             
-            var color = UIColor(red: 230/255.0, green: 230/255.0, blue: 230/255.0, alpha: 1)
-            if (index == activeSlice) {
-                color = slice.color
+            //var color = UIColor(red: 230/255.0, green: 230/255.0, blue: 230/255.0, alpha: 1)
+            //if (index == activeSlice) {
+            let color = slice.color
 //                subtitle = delegate?.setSubtitle(self.total, slice: slice) ?? "subtitle"
 //                info = delegate?.setInfo(self.total, slice: slice) ?? "info"
-            }
+            //}
             color.setFill()
             path.fill()
             
             // add white border to slice
-            UIColor.whiteColor().setStroke()
-            path.stroke()
+//            UIColor.whiteColor().setStroke()
+//            path.stroke()
             
             // increase start value for next slice
             startValue += slice.value / self.total
         }
     }
     
-    func click() {
+    /*func click() {
         activeSlice += 1
         if activeSlice >= slices.count {
             activeSlice = 0
         }
         setNeedsDisplay()
-        }
+        }*/
 }

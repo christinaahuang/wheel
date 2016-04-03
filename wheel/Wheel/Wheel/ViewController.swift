@@ -14,6 +14,17 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     var entries = 1
     var weightArray:[Int] = [1]
     var indexArray:[Int] = []
+    let colorArray = [UIColor(red: 180/250.0, green: 4/250.0, blue: 78/250.0, alpha: 1),
+                      UIColor(red: 96/250.0, green: 174/250.0, blue: 174/250.0, alpha: 1),
+                      UIColor(red: 211/250.0, green: 240/250.0, blue: 232/250.0, alpha: 1),
+                      UIColor(red: 109/250.0, green: 4/250.0, blue: 48/250.0, alpha: 1),
+                      UIColor(red: 54/250.0, green: 116/250.0, blue: 116/250.0, alpha: 1),
+                      UIColor(red: 163/250.0, green: 218/250.0, blue: 202/250.0, alpha: 1),
+                      UIColor(red: 231/250.0, green: 5/250.0, blue: 100/250.0, alpha: 1),
+                      UIColor(red: 22/250.0, green: 68/250.0, blue: 68/250.0, alpha: 1),
+                      UIColor(red: 53/250.0, green: 4/250.0, blue: 24/250.0, alpha: 1)]
+    
+
     var currentRow = 0
     let piechart = Piechart()
     var views: [String: UIView] = [:]
@@ -21,32 +32,27 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background")!)
-        
-        
-        piechart.delegate = self
-        piechart.activeSlice = 2
-        piechart.layer.borderWidth = 1
  
         self.tableView.backgroundColor = .clearColor()
-        
-        
         self.tableView.rowHeight = 84.0
         tableView.delegate = self
         tableView.dataSource = self
     }
     
     @IBAction func spinPressed(sender: AnyObject) {
+        piechart.delegate = self
+        piechart.layer.borderWidth = 1
         var slices:[Piechart.Slice] = []
         for i in 0 ..< weightArray.count - 1
         {
             var temp = Piechart.Slice()
             temp.value = CGFloat(weightArray[i])
-            temp.color = UIColor.redColor()
+            temp.color = colorArray[i]
             temp.text = Array[i]
             slices.append(temp)
         }
         piechart.slices = slices
-        
+        piechart.activeSlice = slices.count
         piechart.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(piechart)
         views["piechart"] = piechart
