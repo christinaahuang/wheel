@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C4865FD1CB0DA96004DFA4E /* SMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C4865FC1CB0DA96004DFA4E /* SMViewController.m */; };
+		2C4866031CB0DAA7004DFA4E /* SMRotaryWheel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C4866001CB0DAA7004DFA4E /* SMRotaryWheel.m */; };
+		2C4866041CB0DAA7004DFA4E /* SMSector.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C4866021CB0DAA7004DFA4E /* SMSector.m */; };
 		DBA4650E1CAFA3010058F9F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA4650D1CAFA3010058F9F5 /* AppDelegate.swift */; };
 		DBA465101CAFA3020058F9F5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA4650F1CAFA3010058F9F5 /* ViewController.swift */; };
 		DBA465131CAFA3020058F9F5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBA465111CAFA3020058F9F5 /* Main.storyboard */; };
@@ -35,6 +38,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2C4865FA1CB0DA91004DFA4E /* Wheel-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Wheel-Bridging-Header.h"; sourceTree = "<group>"; };
+		2C4865FB1CB0DA96004DFA4E /* SMViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMViewController.h; sourceTree = "<group>"; };
+		2C4865FC1CB0DA96004DFA4E /* SMViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMViewController.m; sourceTree = "<group>"; };
+		2C4865FE1CB0DAA7004DFA4E /* SMRotaryProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMRotaryProtocol.h; sourceTree = "<group>"; };
+		2C4865FF1CB0DAA7004DFA4E /* SMRotaryWheel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMRotaryWheel.h; sourceTree = "<group>"; };
+		2C4866001CB0DAA7004DFA4E /* SMRotaryWheel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMRotaryWheel.m; sourceTree = "<group>"; };
+		2C4866011CB0DAA7004DFA4E /* SMSector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMSector.h; sourceTree = "<group>"; };
+		2C4866021CB0DAA7004DFA4E /* SMSector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMSector.m; sourceTree = "<group>"; };
 		DBA4650A1CAFA3010058F9F5 /* Wheel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wheel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBA4650D1CAFA3010058F9F5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DBA4650F1CAFA3010058F9F5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -102,10 +113,18 @@
 				DBA4650D1CAFA3010058F9F5 /* AppDelegate.swift */,
 				DBA4650F1CAFA3010058F9F5 /* ViewController.swift */,
 				DBA465111CAFA3020058F9F5 /* Main.storyboard */,
+				2C4865FE1CB0DAA7004DFA4E /* SMRotaryProtocol.h */,
+				2C4865FF1CB0DAA7004DFA4E /* SMRotaryWheel.h */,
+				2C4866001CB0DAA7004DFA4E /* SMRotaryWheel.m */,
+				2C4866011CB0DAA7004DFA4E /* SMSector.h */,
+				2C4866021CB0DAA7004DFA4E /* SMSector.m */,
+				2C4865FB1CB0DA96004DFA4E /* SMViewController.h */,
+				2C4865FC1CB0DA96004DFA4E /* SMViewController.m */,
 				DBA4653F1CB0531A0058F9F5 /* ChoreCell.swift */,
 				DBA465141CAFA3020058F9F5 /* Assets.xcassets */,
 				DBA465161CAFA3020058F9F5 /* LaunchScreen.storyboard */,
 				DBA465191CAFA3020058F9F5 /* Info.plist */,
+				2C4865FA1CB0DA91004DFA4E /* Wheel-Bridging-Header.h */,
 			);
 			path = Wheel;
 			sourceTree = "<group>";
@@ -190,7 +209,7 @@
 		DBA465021CAFA3010058F9F5 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0720;
+				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "Stephanie Liu";
 				TargetAttributes = {
@@ -262,9 +281,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C4865FD1CB0DA96004DFA4E /* SMViewController.m in Sources */,
+				2C4866041CB0DAA7004DFA4E /* SMSector.m in Sources */,
 				DBA465101CAFA3020058F9F5 /* ViewController.swift in Sources */,
 				DBA465401CB0531A0058F9F5 /* ChoreCell.swift in Sources */,
 				DBA4650E1CAFA3010058F9F5 /* AppDelegate.swift in Sources */,
+				2C4866031CB0DAA7004DFA4E /* SMRotaryWheel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -406,10 +428,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Wheel/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Princeton.Wheel;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Wheel/Wheel-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -417,10 +442,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Wheel/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Princeton.Wheel;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Wheel/Wheel-Bridging-Header.h";
 			};
 			name = Release;
 		};
