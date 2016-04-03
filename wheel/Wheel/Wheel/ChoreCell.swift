@@ -13,6 +13,7 @@ class ChoreCell: UITableViewCell {
     @IBOutlet weak var weightLabel: UILabel!
     @IBOutlet weak var downButton: UIButton!
     @IBOutlet weak var upButton: UIButton!
+    @IBOutlet weak var deleteCell: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()

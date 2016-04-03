@@ -491,6 +491,7 @@
 				DBA465341CAFA3020058F9F5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DBA465351CAFA3020058F9F5 /* Build configuration list for PBXNativeTarget "WheelTests" */ = {
 			isa = XCConfigurationList;
@@ -499,6 +500,7 @@
 				DBA465371CAFA3020058F9F5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DBA465381CAFA3020058F9F5 /* Build configuration list for PBXNativeTarget "WheelUITests" */ = {
 			isa = XCConfigurationList;
@@ -507,6 +509,7 @@
 				DBA4653A1CAFA3020058F9F5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

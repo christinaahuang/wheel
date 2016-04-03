@@ -12,6 +12,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     let gradientLayer = CAGradientLayer()
     var Array:[String] = []
     var entries = 1
+    var weightArray:[Int] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -88,11 +89,53 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return entries
     }
     
+
+    func deletePressed(sender: UIButton) {
+        print(sender.tag)
+        if Array.count > sender.tag {
+            Array.removeAtIndex(sender.tag)
+        }
+        weightArray.removeAtIndex(sender.tag)
+        entries = entries - 1
+        
+        // Update Table Data
+        tableView.beginUpdates()
+        tableView.deleteRowsAtIndexPaths([
+            NSIndexPath(forRow: sender.tag, inSection: 0)
+            ], withRowAnimation: .Automatic)
+        tableView.endUpdates()
+    }
+    
+    func upButtonPressed(sender: UIButton) {
+        weightArray[sender.tag] = weightArray[sender.tag] + 1
+        print(weightArray)
+    }
+    
+    func downButtonPressed(sender: UIButton) {
+        weightArray[sender.tag] = weightArray[sender.tag] - 1
+        print(weightArray)
+    }
+    
+    
+    
     // Returning UITableViewCell to the TableView
     // Automatically interates through all the rows
+    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        weightArray.append(0)
         let cell = tableView.dequeueReusableCellWithIdentifier("choreCell") as! ChoreCell
+        cell.deleteCell.tag = indexPath.row
+        cell.deleteCell.addTarget(self, action: #selector(ViewController.deletePressed(_:)), forControlEvents: UIControlEvents.TouchUpInside)
+        
+        cell.upButton.tag = indexPath.row
+        cell.upButton.addTarget(self, action: #selector(ViewController.upButtonPressed(_:)), forControlEvents: .TouchUpInside)
+        cell.downButton.tag = indexPath.row
+        cell.downButton.addTarget(self, action: #selector(ViewController.downButtonPressed(_:)), forControlEvents: .TouchUpInside)
         return cell
+        
     }
+    
 }
+
+
 

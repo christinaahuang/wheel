@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -64,13 +65,13 @@
                                                         </mask>
                                                     </variation>
                                                 </button>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lS6-jM-lbq">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="#" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lS6-jM-lbq">
                                                     <rect key="frame" x="575" y="33" width="11" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.98364441140000003" green="1" blue="0.9713885672" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </label>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="RuO-Rk-elM">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="RuO-Rk-elM">
                                                     <rect key="frame" x="76" y="18" width="220" height="56"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <color key="tintColor" red="0.98364441140000003" green="1" blue="0.9713885672" alpha="1" colorSpace="calibratedRGB"/>
@@ -160,11 +161,14 @@
                                                     <exclude reference="WW8-vP-UDn"/>
                                                 </mask>
                                                 <mask key="constraints">
+                                                    <exclude reference="6ud-BA-2H3"/>
+                                                    <exclude reference="yNx-Qu-6jA"/>
                                                     <exclude reference="Ktk-Rx-XeK"/>
                                                     <exclude reference="fgE-CV-3qV"/>
                                                     <exclude reference="g96-67-za4"/>
-                                                    <exclude reference="6ud-BA-2H3"/>
-                                                    <exclude reference="yNx-Qu-6jA"/>
+                                                    <exclude reference="Tnn-MU-41E"/>
+                                                    <exclude reference="tgv-z2-0ca"/>
+                                                    <exclude reference="x82-x3-9ag"/>
                                                     <exclude reference="3Uh-dC-ZNe"/>
                                                     <exclude reference="ZF4-aa-dEv"/>
                                                     <exclude reference="l7H-HG-gkf"/>
@@ -172,9 +176,6 @@
                                                     <exclude reference="noT-tU-kw1"/>
                                                     <exclude reference="uwk-6U-hQ6"/>
                                                     <exclude reference="y8i-ZZ-Eiv"/>
-                                                    <exclude reference="Tnn-MU-41E"/>
-                                                    <exclude reference="tgv-z2-0ca"/>
-                                                    <exclude reference="x82-x3-9ag"/>
                                                     <exclude reference="0P6-f8-ptG"/>
                                                     <exclude reference="1ZU-6l-RsT"/>
                                                     <exclude reference="WWx-JY-e7U"/>
@@ -186,26 +187,27 @@
                                                     <include reference="WW8-vP-UDn"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <include reference="Ktk-Rx-XeK"/>
-                                                    <include reference="fgE-CV-3qV"/>
-                                                    <include reference="g96-67-za4"/>
                                                     <include reference="6ud-BA-2H3"/>
                                                     <exclude reference="c8F-Zw-y5F"/>
                                                     <exclude reference="yNx-Qu-6jA"/>
+                                                    <include reference="Ktk-Rx-XeK"/>
+                                                    <include reference="fgE-CV-3qV"/>
+                                                    <include reference="g96-67-za4"/>
+                                                    <include reference="Tnn-MU-41E"/>
+                                                    <include reference="tgv-z2-0ca"/>
                                                     <exclude reference="0Vv-hw-2hR"/>
                                                     <include reference="3Uh-dC-ZNe"/>
                                                     <exclude reference="55f-6w-MdJ"/>
                                                     <exclude reference="R7W-6z-Mdm"/>
                                                     <include reference="lCY-19-USG"/>
                                                     <include reference="noT-tU-kw1"/>
-                                                    <include reference="Tnn-MU-41E"/>
-                                                    <include reference="tgv-z2-0ca"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <connections>
+                                            <outlet property="deleteCell" destination="frk-od-K9E" id="0gC-Nn-ocQ"/>
                                             <outlet property="downButton" destination="brC-8L-k54" id="lTc-bM-qrf"/>
                                             <outlet property="upButton" destination="wOa-yZ-f7J" id="mK8-gq-Nco"/>
                                             <outlet property="weightLabel" destination="lS6-jM-lbq" id="E1E-ir-0I9"/>
