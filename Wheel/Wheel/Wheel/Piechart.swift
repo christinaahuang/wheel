@@ -9,36 +9,44 @@ public protocol PiechartDelegate {
 
 public class Piechart: UIControl {
     
-    // Slice
+    /**
+     * Slice
+     */
     public struct Slice {
         public var color: UIColor!
         public var value: CGFloat!
         public var text: String!
     }
     
-    // Radius
+    /**
+     * Radius
+     */
     public struct Radius {
         public var inner: CGFloat = 0
         public var outer: CGFloat = 60
     }
     
-    // private
-    //private var titleLabel: UILabel!
+    /**
+     * private
+     */
+    private var titleLabel: UILabel!
     private var subtitleLabel: UILabel!
     private var infoLabel: UILabel!
     private var total: CGFloat!
     
     
-    // public
+    /**
+     * public
+     */
     public var radius: Radius = Radius()
     public var activeSlice: Int = 0
     public var delegate: PiechartDelegate?
     
-//    public var title: String = "title" {
-//        didSet {
-//            titleLabel.text = title
-//        }
-//    }
+    public var title: String = "title" {
+        didSet {
+            titleLabel.text = title
+        }
+    }
     
     
     public var slices: [Slice] = [] {
@@ -52,7 +60,9 @@ public class Piechart: UIControl {
     
     
     
-    // methods
+    /**
+     * methods
+     */
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
@@ -60,49 +70,49 @@ public class Piechart: UIControl {
     override public init(frame: CGRect) {
         super.init(frame: frame)
         self.backgroundColor = UIColor.clearColor()
-//
+        
 //        self.addTarget(self, action: #selector(Piechart.click), forControlEvents: .TouchUpInside)
-    
-//        titleLabel = UILabel()
-//        titleLabel.text = title
-//        titleLabel.font = UIFont.preferredFontForTextStyle(UIFontTextStyleHeadline)
-//        titleLabel.textAlignment = .Center
-//        titleLabel.translatesAutoresizingMaskIntoConstraints = false
-//        self.addSubview(titleLabel)
         
-        //        subtitleLabel = UILabel()
-        //        subtitleLabel.text = subtitle
-        //        subtitleLabel.font = UIFont.preferredFontForTextStyle(UIFontTextStyleCaption1)
-        //        subtitleLabel.textColor = UIColor.grayColor()
-        //        subtitleLabel.textAlignment = .Center
-        //        subtitleLabel.translatesAutoresizingMaskIntoConstraints = false
-        //        self.addSubview(subtitleLabel)
-        //
-        //        infoLabel = UILabel()
-        //        infoLabel.text = subtitle
-        //        infoLabel.font = UIFont.preferredFontForTextStyle(UIFontTextStyleCaption1)
-        //        infoLabel.textColor = UIColor.grayColor()
-        //        infoLabel.textAlignment = .Center
-        //        infoLabel.translatesAutoresizingMaskIntoConstraints = false
-        //        self.addSubview(infoLabel)
+        titleLabel = UILabel()
+        titleLabel.text = title
+        titleLabel.font = UIFont.preferredFontForTextStyle(UIFontTextStyleHeadline)
+        titleLabel.textAlignment = .Center
+        titleLabel.translatesAutoresizingMaskIntoConstraints = false
+        self.addSubview(titleLabel)
         
-//        self.addConstraint(NSLayoutConstraint(item: titleLabel, attribute: .CenterX, relatedBy: .Equal, toItem: self, attribute: .CenterX, multiplier: 1, constant: 0))
-//        self.addConstraint(NSLayoutConstraint(item: titleLabel, attribute: .Bottom, relatedBy: .Equal, toItem: self, attribute: .CenterY, multiplier: 1, constant: 0))
+//        subtitleLabel = UILabel()
+//        subtitleLabel.text = subtitle
+//        subtitleLabel.font = UIFont.preferredFontForTextStyle(UIFontTextStyleCaption1)
+//        subtitleLabel.textColor = UIColor.grayColor()
+//        subtitleLabel.textAlignment = .Center
+//        subtitleLabel.translatesAutoresizingMaskIntoConstraints = false
+//        self.addSubview(subtitleLabel)
+//        
+//        infoLabel = UILabel()
+//        infoLabel.text = subtitle
+//        infoLabel.font = UIFont.preferredFontForTextStyle(UIFontTextStyleCaption1)
+//        infoLabel.textColor = UIColor.grayColor()
+//        infoLabel.textAlignment = .Center
+//        infoLabel.translatesAutoresizingMaskIntoConstraints = false
+//        self.addSubview(infoLabel)
         
-        //        self.addConstraint(NSLayoutConstraint(item: subtitleLabel, attribute: .CenterX, relatedBy: .Equal, toItem: self, attribute: .CenterX, multiplier: 1, constant: 0))
-        //        self.addConstraint(NSLayoutConstraint(item: subtitleLabel, attribute: .Top, relatedBy: .Equal, toItem: self, attribute: .CenterY, multiplier: 1, constant: 0))
-        //
-        //        self.addConstraint(NSLayoutConstraint(item: infoLabel, attribute: .CenterX, relatedBy: .Equal, toItem: self, attribute: .CenterX, multiplier: 1, constant: 0))
-        //        self.addConstraint(NSLayoutConstraint(item: infoLabel, attribute: .Top, relatedBy: .Equal, toItem: subtitleLabel, attribute: .Bottom, multiplier: 1, constant: 0))
+        self.addConstraint(NSLayoutConstraint(item: titleLabel, attribute: .CenterX, relatedBy: .Equal, toItem: self, attribute: .CenterX, multiplier: 1, constant: 0))
+        self.addConstraint(NSLayoutConstraint(item: titleLabel, attribute: .Bottom, relatedBy: .Equal, toItem: self, attribute: .CenterY, multiplier: 1, constant: 0))
+        
+//        self.addConstraint(NSLayoutConstraint(item: subtitleLabel, attribute: .CenterX, relatedBy: .Equal, toItem: self, attribute: .CenterX, multiplier: 1, constant: 0))
+//        self.addConstraint(NSLayoutConstraint(item: subtitleLabel, attribute: .Top, relatedBy: .Equal, toItem: self, attribute: .CenterY, multiplier: 1, constant: 0))
+//        
+//        self.addConstraint(NSLayoutConstraint(item: infoLabel, attribute: .CenterX, relatedBy: .Equal, toItem: self, attribute: .CenterX, multiplier: 1, constant: 0))
+//        self.addConstraint(NSLayoutConstraint(item: infoLabel, attribute: .Top, relatedBy: .Equal, toItem: subtitleLabel, attribute: .Bottom, multiplier: 1, constant: 0))
     }
+    
     convenience init() {
         self.init(frame: CGRectZero)
     }
-
     
     public override func drawRect(rect: CGRect) {
         //super.drawRect(rect)
-        
+
         let center = CGPoint(x: bounds.width / 2, y: bounds.height / 2)
         var startValue: CGFloat = 0
         var startAngle: CGFloat = 0
@@ -122,8 +132,8 @@ public class Piechart: UIControl {
             var color = UIColor(red: 230/255.0, green: 230/255.0, blue: 230/255.0, alpha: 1)
             if (index == activeSlice) {
                 color = slice.color
-                //                subtitle = delegate?.setSubtitle(self.total, slice: slice) ?? "subtitle"
-                //                info = delegate?.setInfo(self.total, slice: slice) ?? "info"
+//                subtitle = delegate?.setSubtitle(self.total, slice: slice) ?? "subtitle"
+//                info = delegate?.setInfo(self.total, slice: slice) ?? "info"
             }
             color.setFill()
             path.fill()
@@ -135,7 +145,6 @@ public class Piechart: UIControl {
             // increase start value for next slice
             startValue += slice.value / self.total
         }
-        
     }
     
     func click() {
@@ -144,7 +153,5 @@ public class Piechart: UIControl {
             activeSlice = 0
         }
         setNeedsDisplay()
-    }
-    
-    
+        }
 }
