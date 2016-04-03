@@ -10,45 +10,22 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate, PiechartDelegate {
     let gradientLayer = CAGradientLayer()
-    var Array:[String] = []
+    var Array:[String] = ["name"]
     var entries = 1
-    var weightArray:[Int] = []
+    var weightArray:[Int] = [1]
     var indexArray:[Int] = []
     var currentRow = 0
+    let piechart = Piechart()
+    var views: [String: UIView] = [:]
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background")!)
         
-        var views: [String: UIView] = [:]
         
-        var error = Piechart.Slice()
-        error.value = 4
-        error.color = UIColor.magentaColor()
-        error.text = "Error"
-        
-        var zero = Piechart.Slice()
-        zero.value = 6
-        zero.color = UIColor.blueColor()
-        zero.text = "Zero"
-        
-        var win = Piechart.Slice()
-        win.value = 10
-        win.color = UIColor.orangeColor()
-        win.text = "Winner"
-        
-        let piechart = Piechart()
         piechart.delegate = self
-        piechart.title = "Service"
         piechart.activeSlice = 2
         piechart.layer.borderWidth = 1
-        piechart.slices = [error, zero, win]
-        
-        piechart.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(piechart)
-        views["piechart"] = piechart
-        view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|-[piechart]-|", options: [], metrics: nil, views: views))
-        view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|-200-[piechart(==200)]", options: [], metrics: nil, views: views))
  
         self.tableView.backgroundColor = .clearColor()
         
@@ -56,6 +33,26 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         self.tableView.rowHeight = 84.0
         tableView.delegate = self
         tableView.dataSource = self
+    }
+    
+    @IBAction func spinPressed(sender: AnyObject) {
+        var slices:[Piechart.Slice] = []
+        for i in 0 ..< weightArray.count - 1
+        {
+            var temp = Piechart.Slice()
+            temp.value = CGFloat(weightArray[i])
+            temp.color = UIColor.redColor()
+            temp.text = Array[i]
+            slices.append(temp)
+        }
+        piechart.slices = slices
+        
+        piechart.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(piechart)
+        views["piechart"] = piechart
+        view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|-[piechart]-|", options: [], metrics: nil, views: views))
+        view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|-200-[piechart(==200)]", options: [], metrics: nil, views: views))
+        
     }
     
     func setSubtitle(total: CGFloat, slice: Piechart.Slice) -> String {
@@ -72,24 +69,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return UIStatusBarStyle.LightContent
     }
 
-    /*@IBAction func button1waspressed(sender: AnyObject) {
-        print("Button1")
-        textFieldTwo.hidden = false
-        
-    }*/
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    /*
-    func textFieldDidEndEditing(textField: UITextField) {
-        if textField == textFieldOne {
-            print("hello world")
-            textFieldOne.resignFirstResponder() // Bring keyboard down
-        }
-    }*/
     @IBAction func buttonAddRow(sender: AnyObject) {
         entries = entries + 1
         // Update Table Data
@@ -112,7 +97,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return entries
     }
     
-
     func deletePressed(sender: UIButton) {
         print(sender.tag)
         if Array.count > sender.tag {
@@ -158,8 +142,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
         print(weightArray)
     }
-    
-    
     
     // Returning UITableViewCell to the TableView
     // Automatically interates through all the rows

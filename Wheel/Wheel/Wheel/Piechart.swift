@@ -9,26 +9,20 @@ public protocol PiechartDelegate {
 
 public class Piechart: UIControl {
     
-    /**
-     * Slice
-     */
+    // Slice
     public struct Slice {
         public var color: UIColor!
         public var value: CGFloat!
         public var text: String!
     }
     
-    /**
-     * Radius
-     */
+    // Radius
     public struct Radius {
         public var inner: CGFloat = 0
         public var outer: CGFloat = 60
     }
     
-    /**
-     * private
-     */
+    // Private
     private var titleLabel: UILabel!
     private var subtitleLabel: UILabel!
     private var infoLabel: UILabel!
