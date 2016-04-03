@@ -11,6 +11,8 @@ import UIKit
 class ChoreCell: UITableViewCell {
 
     @IBOutlet weak var weightLabel: UILabel!
+    @IBOutlet weak var downButton: UIButton!
+    @IBOutlet weak var upButton: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -28,4 +30,13 @@ class ChoreCell: UITableViewCell {
             weightLabel.text = String(labelValue + 1)
         }
     }
+    
+    @IBAction func didPressDownButton(sender: AnyObject) {
+        if let labelValue = Int(weightLabel.text!) {
+            weightLabel.text = String(labelValue - 1)
+        }
+    }
+    
+    
+    
 }
