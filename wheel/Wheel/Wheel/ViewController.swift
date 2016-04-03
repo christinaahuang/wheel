@@ -13,6 +13,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     var Array:[String] = []
     var entries = 1
     var weightArray:[Int] = []
+    var indexArray:[Int] = []
+    var currentRow = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -81,7 +83,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBAction func didEndOnExit(sender: UITextField) {
         if sender.text!.characters.count > 0
         {
-            Array.append(sender.text!)
+            let index = indexArray[currentRow]
+            Array.insert(sender.text!, atIndex:index)
         }
         print(Array)
     }
@@ -95,7 +98,22 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         if Array.count > sender.tag {
             Array.removeAtIndex(sender.tag)
         }
-        weightArray.removeAtIndex(sender.tag)
+        print(Array)
+        for index in sender.tag ..< (weightArray.count - 1) {
+            if (weightArray[index] != 0) {
+                weightArray[index] = weightArray[index + 1]
+            }
+        }
+        for index in sender.tag ..< (weightArray.count) {
+            if (indexArray[index] != 0) {
+                if (indexArray[index] > indexArray[sender.tag]) {
+                    indexArray[index] = indexArray[index] -  1
+                }
+            }
+            print(indexArray)
+        }
+
+        weightArray.removeAtIndex(weightArray.count - 1)
         entries = entries - 1
         
         // Update Table Data
@@ -107,12 +125,17 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func upButtonPressed(sender: UIButton) {
-        weightArray[sender.tag] = weightArray[sender.tag] + 1
+        let index = indexArray[sender.tag]
+        weightArray[index] = weightArray[index] + 1
         print(weightArray)
+        print(Array)
     }
     
     func downButtonPressed(sender: UIButton) {
-        weightArray[sender.tag] = weightArray[sender.tag] - 1
+        let index = indexArray[sender.tag]
+        if (sender.tag != 0) {
+            weightArray[index] = weightArray[index] - 1
+        }
         print(weightArray)
     }
     
@@ -123,10 +146,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         weightArray.append(0)
+        indexArray.append(0)
+        currentRow = indexPath.row
         let cell = tableView.dequeueReusableCellWithIdentifier("choreCell") as! ChoreCell
         cell.deleteCell.tag = indexPath.row
         cell.deleteCell.addTarget(self, action: #selector(ViewController.deletePressed(_:)), forControlEvents: UIControlEvents.TouchUpInside)
-        
+        indexArray[indexPath.row] = indexPath.row
         cell.upButton.tag = indexPath.row
         cell.upButton.addTarget(self, action: #selector(ViewController.upButtonPressed(_:)), forControlEvents: .TouchUpInside)
         cell.downButton.tag = indexPath.row

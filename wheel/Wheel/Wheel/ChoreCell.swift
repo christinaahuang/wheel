@@ -26,6 +26,9 @@ class ChoreCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+    @IBAction func didPressDelete(sender: AnyObject) {
+        weightLabel.text = String(0)
+    }
     @IBAction func didPressUpButton(sender: AnyObject) {
         if let labelValue = Int(weightLabel.text!) {
             weightLabel.text = String(labelValue + 1)
