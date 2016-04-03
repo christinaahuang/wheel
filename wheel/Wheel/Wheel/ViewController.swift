@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate, PiechartDelegate {
     let gradientLayer = CAGradientLayer()
     var Array:[String] = []
     var entries = 1
@@ -20,30 +20,50 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background")!)
         
+        var views: [String: UIView] = [:]
         
-//        // 1
-//        self.view.backgroundColor = UIColor.whiteColor()
-//        
-//        // 2
-//        gradientLayer.frame = self.view.bounds
-//        
-//        // 3
-//        let color1 = UIColor(red: 0.337, green: 0.6157, blue: 0.6157, alpha: 1.0).CGColor as CGColorRef
-//        let color2 = UIColor(red: 0.710, green: 0.4627, blue: 0.604, alpha: 1.0).CGColor as CGColorRef
-//        gradientLayer.colors = [color1, color2]
-//        
-//        // 4
-//        gradientLayer.locations = [0.0, 0.65]
-//        
-//        // 5
-//        self.view.layer.addSublayer(gradientLayer)
-//        
+        var error = Piechart.Slice()
+        error.value = 4
+        error.color = UIColor.magentaColor()
+        error.text = "Error"
+        
+        var zero = Piechart.Slice()
+        zero.value = 6
+        zero.color = UIColor.blueColor()
+        zero.text = "Zero"
+        
+        var win = Piechart.Slice()
+        win.value = 10
+        win.color = UIColor.orangeColor()
+        win.text = "Winner"
+        
+        let piechart = Piechart()
+        piechart.delegate = self
+        piechart.title = "Service"
+        piechart.activeSlice = 2
+        piechart.layer.borderWidth = 1
+        piechart.slices = [error, zero, win]
+        
+        piechart.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(piechart)
+        views["piechart"] = piechart
+        view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|-[piechart]-|", options: [], metrics: nil, views: views))
+        view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|-200-[piechart(==200)]", options: [], metrics: nil, views: views))
+ 
         self.tableView.backgroundColor = .clearColor()
         
         
         self.tableView.rowHeight = 84.0
         tableView.delegate = self
         tableView.dataSource = self
+    }
+    
+    func setSubtitle(total: CGFloat, slice: Piechart.Slice) -> String {
+        return "\(Int(slice.value / total * 100))% \(slice.text)"
+    }
+    
+    func setInfo(total: CGFloat, slice: Piechart.Slice) -> String {
+        return "\(Int(slice.value))/\(Int(total))"
     }
     
     @IBOutlet weak var tableView: UITableView!

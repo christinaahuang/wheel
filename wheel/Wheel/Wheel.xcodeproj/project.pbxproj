@@ -13,6 +13,7 @@
 		49ACC9391CB101ED0009BBE2 /* ANViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49ACC9381CB101ED0009BBE2 /* ANViewController.m */; };
 		49ACC93E1CB102220009BBE2 /* ANSpinWheel.m in Sources */ = {isa = PBXBuildFile; fileRef = 49ACC93B1CB102220009BBE2 /* ANSpinWheel.m */; };
 		49ACC93F1CB102220009BBE2 /* ANImageWheel.m in Sources */ = {isa = PBXBuildFile; fileRef = 49ACC93D1CB102220009BBE2 /* ANImageWheel.m */; };
+		DB63E42B1CB116A800A1A199 /* Piechart.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB63E42A1CB116A800A1A199 /* Piechart.swift */; };
 		DBA4650E1CAFA3010058F9F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA4650D1CAFA3010058F9F5 /* AppDelegate.swift */; };
 		DBA465101CAFA3020058F9F5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA4650F1CAFA3010058F9F5 /* ViewController.swift */; };
 		DBA465131CAFA3020058F9F5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBA465111CAFA3020058F9F5 /* Main.storyboard */; };
@@ -55,6 +56,7 @@
 		49ACC93B1CB102220009BBE2 /* ANSpinWheel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANSpinWheel.m; sourceTree = "<group>"; };
 		49ACC93C1CB102220009BBE2 /* ANImageWheel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANImageWheel.h; sourceTree = "<group>"; };
 		49ACC93D1CB102220009BBE2 /* ANImageWheel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANImageWheel.m; sourceTree = "<group>"; };
+		DB63E42A1CB116A800A1A199 /* Piechart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Piechart.swift; sourceTree = "<group>"; };
 		DBA4650A1CAFA3010058F9F5 /* Wheel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wheel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBA4650D1CAFA3010058F9F5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DBA4650F1CAFA3010058F9F5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 			children = (
 				DBA4650D1CAFA3010058F9F5 /* AppDelegate.swift */,
 				DBA4650F1CAFA3010058F9F5 /* ViewController.swift */,
+				DB63E42A1CB116A800A1A199 /* Piechart.swift */,
 				DBA465111CAFA3020058F9F5 /* Main.storyboard */,
 				2C4865FE1CB0DAA7004DFA4E /* SMRotaryProtocol.h */,
 				2C4865FF1CB0DAA7004DFA4E /* SMRotaryWheel.h */,
@@ -297,6 +300,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				49ACC9391CB101ED0009BBE2 /* ANViewController.m in Sources */,
+				DB63E42B1CB116A800A1A199 /* Piechart.swift in Sources */,
 				2C4865FD1CB0DA96004DFA4E /* SMViewController.m in Sources */,
 				2C4866041CB0DAA7004DFA4E /* SMSector.m in Sources */,
 				DBA465101CAFA3020058F9F5 /* ViewController.swift in Sources */,
