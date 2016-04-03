@@ -10,9 +10,9 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate, PiechartDelegate {
     let gradientLayer = CAGradientLayer()
-    var Array:[String] = ["name"]
+    var Array:[String] = []
     var entries = 1
-    var weightArray:[Int] = [1]
+    var weightArray:[Int] = []
     var indexArray:[Int] = []
     let colorArray = [UIColor(red: 180/250.0, green: 4/250.0, blue: 78/250.0, alpha: 1),
                       UIColor(red: 96/250.0, green: 174/250.0, blue: 174/250.0, alpha: 1),

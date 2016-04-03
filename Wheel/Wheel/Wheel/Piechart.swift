@@ -19,7 +19,7 @@ public class Piechart: UIControl {
     // Radius
     public struct Radius {
         public var inner: CGFloat = 0
-        public var outer: CGFloat = 60
+        public var outer: CGFloat = 80
     }
     
     // Private
@@ -53,18 +53,19 @@ public class Piechart: UIControl {
     }
     
     
-    
-    /**
-     * methods
-     */
+    // methods
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     
     override public init(frame: CGRect) {
-        super.init(frame: frame)
+        let point = CGPointZero
+        let size = CGSizeZero
+        let temp = CGRect(origin: point, size: size)
+        super.init(frame: temp)
         self.backgroundColor = UIColor.clearColor()
-        
+    }
+    
 //        self.addTarget(self, action: #selector(Piechart.click), forControlEvents: .TouchUpInside)
         
 //        titleLabel = UILabel()
@@ -98,7 +99,6 @@ public class Piechart: UIControl {
 //        
 //        self.addConstraint(NSLayoutConstraint(item: infoLabel, attribute: .CenterX, relatedBy: .Equal, toItem: self, attribute: .CenterX, multiplier: 1, constant: 0))
 //        self.addConstraint(NSLayoutConstraint(item: infoLabel, attribute: .Top, relatedBy: .Equal, toItem: subtitleLabel, attribute: .Bottom, multiplier: 1, constant: 0))
-    }
     
     convenience init() {
         self.init(frame: CGRectZero)
@@ -123,7 +123,6 @@ public class Piechart: UIControl {
             path.moveToPoint(center)
             path.addArcWithCenter(center, radius: radius.outer, startAngle: startAngle, endAngle: endAngle, clockwise: true)
             
-            //var color = UIColor(red: 230/255.0, green: 230/255.0, blue: 230/255.0, alpha: 1)
             //if (index == activeSlice) {
             let color = slice.color
 //                subtitle = delegate?.setSubtitle(self.total, slice: slice) ?? "subtitle"
@@ -132,10 +131,7 @@ public class Piechart: UIControl {
             color.setFill()
             path.fill()
             
-            // add white border to slice
-//            UIColor.whiteColor().setStroke()
-//            path.stroke()
-            
+
             // increase start value for next slice
             startValue += slice.value / self.total
         }
