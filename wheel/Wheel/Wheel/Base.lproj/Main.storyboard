@@ -23,6 +23,11 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="separatorColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Yas-vt-mxy">
+                                    <rect key="frame" x="0.0" y="72" width="600" height="60"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" image="minus"/>
+                                </button>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" alpha="0.0" contentMode="center" horizontalHuggingPriority="1000" selectionStyle="default" indentationWidth="10" reuseIdentifier="choreCell" id="ykK-Gu-Yji" customClass="ChoreCell" customModule="Wheel" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="600" height="44"/>
@@ -32,7 +37,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="RuO-Rk-elM">
-                                                    <rect key="frame" x="312" y="7" width="100" height="30"/>
+                                                    <rect key="frame" x="327" y="7" width="100" height="30"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <color key="tintColor" red="0.98364441140000003" green="1" blue="0.9713885672" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
@@ -46,7 +51,7 @@
                                                     </connections>
                                                 </textField>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lS6-jM-lbq">
-                                                    <rect key="frame" x="426" y="12" width="42" height="20.5"/>
+                                                    <rect key="frame" x="441" y="12" width="42" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.19215686269999999" green="0.3921568627" blue="0.50588235290000005" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -149,7 +154,7 @@
     <resources>
         <image name="down" width="29" height="15"/>
         <image name="minus" width="60" height="60"/>
-        <image name="up" width="29" height="15"/>
+        <image name="up" width="14" height="7"/>
     </resources>
     <color key="tintColor" red="0.98364441138068381" green="1" blue="0.97138856719642241" alpha="1" colorSpace="calibratedRGB"/>
 </document>
