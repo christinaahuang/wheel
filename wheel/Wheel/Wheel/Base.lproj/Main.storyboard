@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -33,8 +33,7 @@
                                         <exclude reference="fHS-jI-pBZ"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="10" y="52" width="380" height="356"/>
+                                <variation key="heightClass=regular-widthClass=compact">
                                     <mask key="constraints">
                                         <exclude reference="Fg9-PU-cU4"/>
                                         <include reference="fHS-jI-pBZ"/>
@@ -61,10 +60,19 @@
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact">
                                     <mask key="constraints">
-                                        <include reference="D75-0c-5d0"/>
+                                        <exclude reference="D75-0c-5d0"/>
                                     </mask>
                                 </variation>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ncq-b6-qGW">
+                                <rect key="frame" x="542" y="20" width="38" height="30"/>
+                                <state key="normal" title="SPIN!">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="spinPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uV8-Q0-eMn"/>
+                                </connections>
+                            </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6Rb-pg-xCf">
                                 <rect key="frame" x="0.0" y="310" width="600" height="290"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -210,11 +218,11 @@
                                                     <exclude reference="WW8-vP-UDn"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <exclude reference="6ud-BA-2H3"/>
-                                                    <exclude reference="yNx-Qu-6jA"/>
                                                     <exclude reference="Ktk-Rx-XeK"/>
                                                     <exclude reference="fgE-CV-3qV"/>
                                                     <exclude reference="g96-67-za4"/>
+                                                    <exclude reference="6ud-BA-2H3"/>
+                                                    <exclude reference="yNx-Qu-6jA"/>
                                                     <exclude reference="Tnn-MU-41E"/>
                                                     <exclude reference="tgv-z2-0ca"/>
                                                     <exclude reference="x82-x3-9ag"/>
@@ -236,12 +244,12 @@
                                                     <include reference="WW8-vP-UDn"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <include reference="6ud-BA-2H3"/>
-                                                    <exclude reference="c8F-Zw-y5F"/>
-                                                    <exclude reference="yNx-Qu-6jA"/>
                                                     <include reference="Ktk-Rx-XeK"/>
                                                     <include reference="fgE-CV-3qV"/>
                                                     <include reference="g96-67-za4"/>
+                                                    <include reference="6ud-BA-2H3"/>
+                                                    <exclude reference="c8F-Zw-y5F"/>
+                                                    <exclude reference="yNx-Qu-6jA"/>
                                                     <include reference="Tnn-MU-41E"/>
                                                     <include reference="tgv-z2-0ca"/>
                                                     <exclude reference="0Vv-hw-2hR"/>
@@ -267,33 +275,27 @@
                                     <rect key="frame" x="0.0" y="416" width="400" height="490"/>
                                 </variation>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ncq-b6-qGW">
-                                <rect key="frame" x="542" y="20" width="38" height="30"/>
-                                <state key="normal" title="SPIN!">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="spinPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uV8-Q0-eMn"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="Ncq-b6-qGW" secondAttribute="trailing" constant="10" id="4v6-IY-8oi"/>
                             <constraint firstItem="6Rb-pg-xCf" firstAttribute="top" secondItem="Gva-8Q-keE" secondAttribute="bottom" constant="20" id="5vd-OE-eVB"/>
                             <constraint firstItem="Gva-8Q-keE" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="8" id="7r3-hN-dv2"/>
-                            <constraint firstItem="6Rb-pg-xCf" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="290" id="FZk-Vs-jkU"/>
+                            <constraint firstItem="fYH-wx-1R7" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="13" id="AYl-M8-T5s"/>
+                            <constraint firstItem="6Rb-pg-xCf" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="360" id="FZk-Vs-jkU"/>
                             <constraint firstItem="6Rb-pg-xCf" firstAttribute="top" secondItem="Gva-8Q-keE" secondAttribute="bottom" constant="100" id="Ivy-Io-Gsf"/>
                             <constraint firstAttribute="trailingMargin" secondItem="fYH-wx-1R7" secondAttribute="trailing" constant="60" id="Lw8-l1-6Cb"/>
                             <constraint firstItem="6Rb-pg-xCf" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="MBe-gf-DeA"/>
                             <constraint firstItem="6Rb-pg-xCf" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Otg-yN-lg8"/>
-                            <constraint firstItem="6Rb-pg-xCf" firstAttribute="top" secondItem="Gva-8Q-keE" secondAttribute="bottom" constant="100" id="Q9m-vE-ItY"/>
+                            <constraint firstItem="6Rb-pg-xCf" firstAttribute="top" secondItem="Gva-8Q-keE" secondAttribute="bottom" constant="130" id="Q9m-vE-ItY"/>
                             <constraint firstItem="fYH-wx-1R7" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="60" id="RrN-XB-HXH"/>
                             <constraint firstItem="6Rb-pg-xCf" firstAttribute="top" secondItem="Gva-8Q-keE" secondAttribute="bottom" constant="20" id="Syr-nC-2p4"/>
                             <constraint firstItem="Gva-8Q-keE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="VJP-Ph-tI9"/>
                             <constraint firstItem="Ncq-b6-qGW" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="bZj-Vw-eEu"/>
                             <constraint firstItem="fYH-wx-1R7" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="30" id="fuQ-2D-Qzh"/>
+                            <constraint firstItem="Gva-8Q-keE" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="60" id="gpP-Qa-LjJ"/>
                             <constraint firstItem="Gva-8Q-keE" firstAttribute="centerX" secondItem="6Rb-pg-xCf" secondAttribute="centerX" id="iv6-jr-PyH"/>
+                            <constraint firstItem="Gva-8Q-keE" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="50" id="ksS-rR-fOu"/>
                             <constraint firstAttribute="trailing" secondItem="6Rb-pg-xCf" secondAttribute="trailing" id="mVX-sq-mEY"/>
                             <constraint firstItem="Gva-8Q-keE" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="n8k-wc-ApR"/>
                             <constraint firstItem="6Rb-pg-xCf" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="nRp-2v-J8d"/>
@@ -310,10 +312,13 @@
                             <mask key="constraints">
                                 <exclude reference="7r3-hN-dv2"/>
                                 <exclude reference="VJP-Ph-tI9"/>
+                                <exclude reference="gpP-Qa-LjJ"/>
                                 <exclude reference="iv6-jr-PyH"/>
+                                <exclude reference="ksS-rR-fOu"/>
                                 <exclude reference="n8k-wc-ApR"/>
                                 <exclude reference="wzs-Ey-XVC"/>
                                 <exclude reference="xnv-fn-QDl"/>
+                                <exclude reference="AYl-M8-T5s"/>
                                 <exclude reference="Lw8-l1-6Cb"/>
                                 <exclude reference="RrN-XB-HXH"/>
                                 <exclude reference="fuQ-2D-Qzh"/>
@@ -334,15 +339,18 @@
                             <mask key="constraints">
                                 <exclude reference="7r3-hN-dv2"/>
                                 <exclude reference="VJP-Ph-tI9"/>
+                                <include reference="gpP-Qa-LjJ"/>
                                 <include reference="iv6-jr-PyH"/>
+                                <exclude reference="ksS-rR-fOu"/>
                                 <exclude reference="n8k-wc-ApR"/>
                                 <exclude reference="wzs-Ey-XVC"/>
                                 <include reference="xnv-fn-QDl"/>
+                                <include reference="AYl-M8-T5s"/>
                                 <include reference="Lw8-l1-6Cb"/>
                                 <include reference="RrN-XB-HXH"/>
-                                <include reference="fuQ-2D-Qzh"/>
+                                <exclude reference="fuQ-2D-Qzh"/>
                                 <exclude reference="5vd-OE-eVB"/>
-                                <include reference="Ivy-Io-Gsf"/>
+                                <exclude reference="Ivy-Io-Gsf"/>
                                 <include reference="Q9m-vE-ItY"/>
                                 <exclude reference="Syr-nC-2p4"/>
                                 <exclude reference="ull-uN-Oge"/>
