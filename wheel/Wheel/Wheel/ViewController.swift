@@ -14,36 +14,32 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
     override func viewDidLoad() {
         super.viewDidLoad()
-//        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background")!)
-//        
-//        
-////        // 1
-////        self.view.backgroundColor = UIColor.whiteColor()
-////        
-////        // 2
-////        gradientLayer.frame = self.view.bounds
-////        
-////        // 3
-////        let color1 = UIColor(red: 0.337, green: 0.6157, blue: 0.6157, alpha: 1.0).CGColor as CGColorRef
-////        let color2 = UIColor(red: 0.710, green: 0.4627, blue: 0.604, alpha: 1.0).CGColor as CGColorRef
-////        gradientLayer.colors = [color1, color2]
-////        
-////        // 4
-////        gradientLayer.locations = [0.0, 0.65]
-////        
-////        // 5
-////        self.view.layer.addSublayer(gradientLayer)
-////        
-//        self.tableView.backgroundColor = .clearColor()
-//        
-//        
-//        self.tableView.rowHeight = 84.0
-//        tableView.delegate = self
-//        tableView.dataSource = self
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background")!)
         
         
-        let objCViewController = SMViewController()
-        objCViewController.viewDidLoad()
+//        // 1
+//        self.view.backgroundColor = UIColor.whiteColor()
+//        
+//        // 2
+//        gradientLayer.frame = self.view.bounds
+//        
+//        // 3
+//        let color1 = UIColor(red: 0.337, green: 0.6157, blue: 0.6157, alpha: 1.0).CGColor as CGColorRef
+//        let color2 = UIColor(red: 0.710, green: 0.4627, blue: 0.604, alpha: 1.0).CGColor as CGColorRef
+//        gradientLayer.colors = [color1, color2]
+//        
+//        // 4
+//        gradientLayer.locations = [0.0, 0.65]
+//        
+//        // 5
+//        self.view.layer.addSublayer(gradientLayer)
+//        
+        self.tableView.backgroundColor = .clearColor()
+        
+        
+        self.tableView.rowHeight = 84.0
+        tableView.delegate = self
+        tableView.dataSource = self
     }
     
     @IBOutlet weak var tableView: UITableView!
