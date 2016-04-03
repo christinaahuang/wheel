@@ -19,7 +19,7 @@ public class Piechart: UIControl {
     // Radius
     public struct Radius {
         public var inner: CGFloat = 0
-        public var outer: CGFloat = 80
+        public var outer: CGFloat = 120
     }
     
     // Private
@@ -59,11 +59,9 @@ public class Piechart: UIControl {
     }
     
     override public init(frame: CGRect) {
-        let point = CGPointZero
-        let size = CGSizeZero
-        let temp = CGRect(origin: point, size: size)
-        super.init(frame: temp)
+        super.init(frame: frame)
         self.backgroundColor = UIColor.clearColor()
+        
     }
     
 //        self.addTarget(self, action: #selector(Piechart.click), forControlEvents: .TouchUpInside)
@@ -105,8 +103,7 @@ public class Piechart: UIControl {
     }
     
     public override func drawRect(rect: CGRect) {
-        //super.drawRect(rect)
-
+        
         let center = CGPoint(x: bounds.width / 2, y: bounds.height / 2)
         var startValue: CGFloat = 0
         var startAngle: CGFloat = 0
@@ -131,17 +128,9 @@ public class Piechart: UIControl {
             color.setFill()
             path.fill()
             
-
             // increase start value for next slice
             startValue += slice.value / self.total
         }
     }
     
-    /*func click() {
-        activeSlice += 1
-        if activeSlice >= slices.count {
-            activeSlice = 0
-        }
-        setNeedsDisplay()
-        }*/
 }
