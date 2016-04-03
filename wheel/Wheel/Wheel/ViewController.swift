@@ -26,8 +26,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
 
     var currentRow = 0
-    let piechart = Piechart()
-    var views: [String: UIView] = [:]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,10 +38,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     @IBAction func spinPressed(sender: AnyObject) {
+        let piechart = Piechart()
+        var views: [String: UIView] = [:]
         piechart.delegate = self
         piechart.layer.borderWidth = 1
         var slices:[Piechart.Slice] = []
-        for i in 0 ..< weightArray.count - 1
+        for i in 0 ..< weightArray.count
         {
             var temp = Piechart.Slice()
             temp.value = CGFloat(weightArray[i])
@@ -109,19 +109,20 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             Array.removeAtIndex(sender.tag)
         }
         print(Array)
-        for index in sender.tag ..< (weightArray.count - 1) {
+        for index in indexArray[sender.tag] ..< (weightArray.count - 1) {
             if (weightArray[index] != 0) {
                 weightArray[index] = weightArray[index + 1]
             }
         }
-        for index in sender.tag ..< (weightArray.count) {
+        
+        for index in sender.tag ..< (indexArray.count) {
             if (indexArray[index] != 0) {
                 if (indexArray[index] > indexArray[sender.tag]) {
-                    indexArray[index] = indexArray[index] -  1
+                    indexArray[index] = indexArray[index] - 1
                 }
             }
-            print(indexArray)
         }
+
 
         weightArray.removeAtIndex(weightArray.count - 1)
         entries = entries - 1
@@ -143,7 +144,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func downButtonPressed(sender: UIButton) {
         let index = indexArray[sender.tag]
-        if (sender.tag != 0) {
+        if (weightArray[index] != 0) {
             weightArray[index] = weightArray[index] - 1
         }
         print(weightArray)
