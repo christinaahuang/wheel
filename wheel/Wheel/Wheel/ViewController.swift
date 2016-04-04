@@ -14,6 +14,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     var entries = 1
     var weightArray:[Int] = []
     var indexArray:[Int] = []
+    var index = 0;
     let colorArray = [UIColor(red: 180/250.0, green: 4/250.0, blue: 78/250.0, alpha: 1),
                       UIColor(red: 96/250.0, green: 174/250.0, blue: 174/250.0, alpha: 1),
                       UIColor(red: 211/250.0, green: 240/250.0, blue: 232/250.0, alpha: 1),
@@ -37,12 +38,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableView.dataSource = self
     }
     
+  
+    
     @IBAction func spinPressed(sender: AnyObject) {
         let piechart = Piechart()
         var views: [String: UIView] = [:]
         
         piechart.delegate = self
         piechart.layer.borderWidth = 1
+        piechart.layer.borderColor = UIColor(red:1.0, green:1.0, blue:1.0, alpha:0.0).CGColor
         var slices:[Piechart.Slice] = []
         for i in 0 ..< weightArray.count
         {
@@ -55,11 +59,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         piechart.slices = slices
         piechart.activeSlice = slices.count
         piechart.translatesAutoresizingMaskIntoConstraints = false
-        self.view.insertSubview(piechart, atIndex: 0)
-        self.view.layer.borderColor = UIColor.clearColor().CGColor
+        self.view.insertSubview(piechart, atIndex: index)
+        index = index + 1
         views["piechart"] = piechart
         view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|-10-[piechart]-|", options: [], metrics: nil, views: views))
         view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|-42-[piechart(==400)]", options: [], metrics: nil, views: views))
+        
+
     }
     
     func setSubtitle(total: CGFloat, slice: Piechart.Slice) -> String {
