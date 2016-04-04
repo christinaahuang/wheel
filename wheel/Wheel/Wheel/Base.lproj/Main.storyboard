@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -213,6 +213,7 @@
                                         <connections>
                                             <outlet property="deleteCell" destination="frk-od-K9E" id="0gC-Nn-ocQ"/>
                                             <outlet property="downButton" destination="brC-8L-k54" id="lTc-bM-qrf"/>
+                                            <outlet property="textField" destination="RuO-Rk-elM" id="PDh-bK-Uu5"/>
                                             <outlet property="upButton" destination="wOa-yZ-f7J" id="mK8-gq-Nco"/>
                                             <outlet property="weightLabel" destination="lS6-jM-lbq" id="E1E-ir-0I9"/>
                                         </connections>
@@ -445,9 +446,9 @@
                                 <exclude reference="Onq-Gx-SMS"/>
                                 <exclude reference="R3F-nd-vkg"/>
                                 <exclude reference="S1X-yD-wPU"/>
+                                <exclude reference="vtV-bo-0Yn"/>
                                 <exclude reference="6Ye-a2-I37"/>
                                 <exclude reference="bLu-Co-bsM"/>
-                                <exclude reference="vtV-bo-0Yn"/>
                             </mask>
                         </variation>
                     </view>

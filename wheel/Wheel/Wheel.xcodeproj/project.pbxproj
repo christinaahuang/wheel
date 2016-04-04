@@ -233,7 +233,7 @@
 				TargetAttributes = {
 					DBA465091CAFA3010058F9F5 = {
 						CreatedOnToolsVersion = 7.2.1;
-						DevelopmentTeam = LJ2BWEX7B9;
+						DevelopmentTeam = HT2N8NM79P;
 					};
 					DBA4651D1CAFA3020058F9F5 = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -455,7 +455,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Wheel/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Princeton.Wheel;
+				PRODUCT_BUNDLE_IDENTIFIER = Christina.Wheel;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Wheel/Wheel-Bridging-Header.h";
@@ -472,7 +472,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Wheel/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Princeton.Wheel;
+				PRODUCT_BUNDLE_IDENTIFIER = Christina.Wheel;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Wheel/Wheel-Bridging-Header.h";

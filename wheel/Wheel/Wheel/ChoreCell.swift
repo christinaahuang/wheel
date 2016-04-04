@@ -15,6 +15,7 @@ class ChoreCell: UITableViewCell {
     @IBOutlet weak var upButton: UIButton!
     @IBOutlet weak var deleteCell: UIButton!
     
+    @IBOutlet weak var textField: UITextField!
     override func awakeFromNib() {
         super.awakeFromNib()
         weightLabel.text = String(0)
@@ -28,6 +29,7 @@ class ChoreCell: UITableViewCell {
 
     @IBAction func didPressDelete(sender: AnyObject) {
         weightLabel.text = String(0)
+        textField.text = ""
     }
     @IBAction func didPressUpButton(sender: AnyObject) {
         if let labelValue = Int(weightLabel.text!) {
